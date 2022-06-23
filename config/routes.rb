@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 
   root 'root#index'
   resources :projects, only: [:index]
+  resources :my_settings, only: [:index]
 end

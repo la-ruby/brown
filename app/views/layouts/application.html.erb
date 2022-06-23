@@ -13,6 +13,17 @@
 
   <body>
     <%= render "/flashes" %>
-    <%= yield %>
+    <%= render '/layouts/application/header' %>
+
+    <!-- layout based on getbootstrap.com/docs/5.2/examples/dashboard/ -->
+    <div class="container-fluid">
+      <div class="row">
+        <%= render '/layouts/application/sidebar' %>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <%= yield %>
+        </main>
+      </div>
+    </div>
   </body>
 </html>
+

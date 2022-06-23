@@ -2,7 +2,22 @@
 // @import 'bootstrap-icons/font/bootstrap-icons';
 // instead using bootstrap at app/views/_javascripts
 @import 'debug';
+@import 'sidebar';
+@import 'sessions';
+
 
 body {
   background-color: #f5f5f5;
 }
+
+/* dont want borders when using button_to */
+.brown-no-hover.btn:hover {
+  border-color: transparent !important;
+}
+.brown-no-hover.btn:active {
+  border-color: transparent !important;
+}
+.brown-no-hover.btn:focus {
+  border-color: transparent !important;
+}
+/* /dont want borders when using button_to */

@@ -4,7 +4,7 @@
 class RootController < ApplicationController
   def index
     if current_user
-      redirect_to projects_path
+      redirect_to my_settings_path
     else
       redirect_to new_user_session_path
     end

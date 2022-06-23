@@ -13,7 +13,13 @@
 }.each do |k,v|
   # If a value is provideed in ENV, use that,
   # fall back to whatever the hash value provides
-  Object.const_set(
-    k,
-    ENV[k] || v)
+  if Rails.env.test?
+    Object.const_set(
+      k,
+      v)
+  else
+    Object.const_set(
+      k,
+      ENV[k] || v)
+    end
 end
