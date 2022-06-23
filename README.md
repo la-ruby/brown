@@ -18,7 +18,6 @@ If you're reading this after I have left, please
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 orderedList:0 -->
 
 - [First time setup](#first-time-setup)
-- [Edit master key](#edit-master-key)
 - Testing
 	- [Running the tests](#running-the-tests)
 	- [Auto runner](#auto-runner)
@@ -36,8 +35,8 @@ If you're reading this after I have left, please
 $ cd ~/
 
 
-$ git clone git@github.com:la-ruby/created-rails-app.git
-Cloning into 'created-rails-app'...
+$ git clone git@github.com:your-org/your-repo.git
+Cloning into 'your-repo'...
 remote: Enumerating objects: 3377, done.
 remote: Counting objects: 100% (342/342), done.
 remote: Compressing objects: 100% (212/212), done.
@@ -46,7 +45,7 @@ Receiving objects: 100% (3377/3377), 3.59 MiB | 1.76 MiB/s, done.
 Resolving deltas: 100% (1767/1767), done.
 
 
-$ cd created-rails-app/
+$ cd your-repo/
 
 
 $ ./bin/setup
@@ -107,22 +106,6 @@ $ ./bin/dev
 03:03:44 web.1  | * Listening on http://127.0.0.1:3000
 03:03:44 web.1  | * Listening on http://[::1]:3000
 03:03:44 web.1  | Use Ctrl-C to stop
-```
-
-
-### Edit master key
-
-```
-$ EDITOR=vim rails credentials:edit
-Adding config/master.key to store the encryption key: example3afed74ffffff6ad3d6ffffffe
-
-Save this in a password manager your team can access.
-
-If you lose the key, no one, including you, can access anything encrypted with it.
-
-      create  config/master.key
-...
-$
 ```
 
 
@@ -191,12 +174,12 @@ Copy over `bootstrap.css` and `bootstrap.bundle.js` after running `npm run dist`
 
 ```
 $ cd ~/
-$ git clone https://github.com/la-ruby/your-bootstrap-fork
+$ git clone https://github.com/your-org/your-bootstrap-fork
 $ cd ~/your-bootstrap-fork
 $ npm install
 $ npm run dist
-$ cp dist/css/bootstrap.css ~/created-rails-app/public/
-$ cp dist/js/bootstrap.bundle.js ~/created-rails-app/public/
+$ cp dist/css/bootstrap.css ~/your-repo/public/
+$ cp dist/js/bootstrap.bundle.js ~/your-repo/public/
 ```
 
 
