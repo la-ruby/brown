@@ -11,4 +11,6 @@ Rails.application.routes.draw do
     username == DEVELOPER_EMAIL && password == (DEVELOPER_PASSWORD)
   end
   mount protected_resque, :at => "/resque"
+
+  root 'root#index'
 end
