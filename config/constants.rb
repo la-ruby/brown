@@ -7,7 +7,9 @@
   'BROWN_NAME' => 'Testing',
   'BROWN_NAME_NORMAL' => 'Testing',
   'BROWN_NAME_PARENTHESIS' => '(T)esting',
-  'BROWN_BUCKET_HOST' => 'http://localhost:2990/brown-bucket'
+  'BROWN_BUCKET_HOST' => 'http://localhost:2990/brown-bucket',
+  'BROWN_SUPPORT_NAME' => 'Jenny',
+  'BROWN_SUPPORT_PHONE' => '(310)-111-1111'
 }.each do |k,v|
   # If a value is provideed in ENV, use that,
   # fall back to whatever the hash value provides
