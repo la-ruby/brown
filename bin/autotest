@@ -27,10 +27,16 @@ function stable_exec() {
 
 function kill_tests() {
   pkill -SIGINT -f './bin/rails test';
+  pkill -SIGINT -f 'reek';
+  pkill -SIGINT -f 'rubocop';
+  pkill -SIGINT -f 'flay';
 }
 
 function run_tests() {
-   stable_exec audible_exec ./bin/rails test
+  reek app/
+  rubocop app/
+  flay --mas 21 --only defn app/models/
+  stable_exec audible_exec rdbg -O -n -c -- ./bin/rails test
 }
 
 MY_LATENCY=1
@@ -38,5 +44,6 @@ run_tests
 while fswatch --recursive --exclude ".*" --include "\\.rb$" --one-event .; do
   horizontal_rule
   kill_tests
+  printf '\33c\e[3J' # clear
   run_tests &
 done

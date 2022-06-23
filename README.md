@@ -182,6 +182,12 @@ $ cp dist/css/bootstrap.css ~/your-repo/public/
 $ cp dist/js/bootstrap.bundle.js ~/your-repo/public/
 ```
 
+### Developers Local bucket
+
+A copy of production (s3) bucket should be placed at
+`~/python3_http_server/brown-bucket/` and `Procfile.dev` is set to serve
+that using the `python3 -m http.server` command.
+
 
 ### Coding guidelines
 

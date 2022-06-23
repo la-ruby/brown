@@ -2,3 +2,4 @@ web: rdbg -O -n -c -- bin/rails server -p 3000
 js: yarn build --watch
 css: yarn build:css --watch
 jobs: QUEUE=default COUNT=1 bundle exec rake resque:workers
+python3_http_server: (cd ~/python3_http_server; python3 -m http.server 2990)

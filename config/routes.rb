@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   mount protected_resque, :at => "/resque"
 
   root 'root#index'
+  resources :projects, only: [:index]
 end
