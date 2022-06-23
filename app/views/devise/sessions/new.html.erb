@@ -2,7 +2,7 @@
   <main class="form-signin w-100 m-auto">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <img src="<%= "#{BUCKET_HOST}/logo-faded.png" %>" alt="" width="122">
-      <div class="mb-4">(A)dvanced Associates (REA)ltor (D)ashboard</div>
+      <div class="mb-4"><%= NAME_PARENTHESIS %></div>
       <!--<div class="zh5 mb-3 zfw-normal">Please sign in</div>-->
       <br>
 
