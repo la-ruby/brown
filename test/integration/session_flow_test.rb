@@ -8,7 +8,7 @@ class SessionFlowTest < ActionDispatch::IntegrationTest
   test 'can log in' do
     get '/'
     follow_redirect!
-    post user_session_path, params: {'user'=>{'email'=>FIRST_USER_EMAIL, 'password'=>FIRST_USER_PASSWORD}}
+    post user_session_path, params: {'user'=>{'email'=>BROWN_FIRST_USER_EMAIL, 'password'=>BROWN_FIRST_USER_PASSWORD}}
     follow_redirect!
     follow_redirect!
     assert_equal 'testing', response.body

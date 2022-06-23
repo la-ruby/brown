@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # resque
   require 'resque/server'
   protected_resque = Rack::Auth::Basic.new(Resque::Server.new) do |username, password|
-    username == DEVELOPER_EMAIL && password == (DEVELOPER_PASSWORD)
+    username == BROWN_DEVELOPER_EMAIL && password == (BROWN_DEVELOPER_PASSWORD)
   end
   mount protected_resque, :at => "/resque"
 
