@@ -10,8 +10,9 @@
   'BROWN_BUCKET_HOST' => 'http://localhost:2990/brown-bucket',
   'BROWN_SUPPORT_NAME' => 'Jenny',
   'BROWN_SUPPORT_PHONE' => '(310)-111-1111',
-  'BROWN_SERVICE_ONE' => 'testingserviceone',
-  'BROWN_SERVICE_TWO' => 'testingservicetwo',
+  'BROWN_ZAIBATSU' => 'testingserviceone',
+  'BROWN_DUFRENITE' => 'testingservicetwo',
+  'BROWN_ZAIBATSU_URL_1' => 'https://example.com/?1',
 
 }.each do |k,v|
   # If a value is provideed in ENV, use that,

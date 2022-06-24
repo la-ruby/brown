@@ -12,9 +12,9 @@ class User < ApplicationRecord
 
   # has the  quad of credentials been supplied by user
   def my_settings?
-    my_settings.service_one_username.present? &&
-      my_settings.service_one_password.present? &&
-      my_settings.service_two_username.present? &&
-      my_settings.service_two_password.present?
+    my_settings.zaibatsu_username.present? &&
+      my_settings.zaibatsu_password.present? &&
+      my_settings.dufrenite_username.present? &&
+      my_settings.dufrenite_password.present?
   end
 end

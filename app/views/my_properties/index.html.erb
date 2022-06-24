@@ -1,7 +1,18 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
   <div class="fs-6">
-    My Properties (<%= current_user.properties.count %>)
+    My Properties
   </div>
+  <% if current_user.properties.present? %>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group me-2">
+      <%= button_to("/zaibatsu_syncs", class: 'btn btn-sm brown-no-hover', data: { turbo: false }, form: {class: 'ms-3 d-inline-block'}) do %>
+        <span class="brown-dotted"><i class="bi bi-arrow-repeat"></i> refresh</span>
+      <% end %>
+
+
+    </div>
+  </div>
+  <% end %>
 </div>
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -9,12 +20,19 @@
     <div class="col">
       <div class="card h-100 brown-bg-light-6 border-0">
         <div class="card-body">
-          <div class="card-title fw-normal">⚠ No properties shown</div>
+          <div class="card-title fw-normal">
+	    ⚠ No properties shown
+            <% if current_user.my_settings? %>
+              <%= button_to("/zaibatsu_syncs", class: 'btn brown-no-hover', data: { turbo: false }, form: {class: 'ms-3 d-inline-block'}) do %>
+                <span class="brown-dotted"><i class="bi bi-arrow-repeat"></i> refresh</span>
+	      <% end %>
+            <% end %>
+	  </div>
           <% if current_user.my_settings? %>
             <p>&nbsp;</p>
           <% else %>
             <p class="card-text fs-6 text-reset fw-normal">
-              Get started by supplying your <%= BROWN_SERVICE_ONE %> and
+              Get started by supplying your <%= BROWN_ZAIBATSU %> and
               DocuSign credentials at <a href="/" class="text-decoration-none brown-dotted">My Settings</a>
     	  </p>
           <% end %>
@@ -27,9 +45,12 @@
     <div class="col">
       <div class="card h-100 brown-bg-light-6 border-0">
         <div class="card-body">
-          <div class="card-title fw-normal"><%= property.inspect[0..9] %></div>
+          <div class="card-title fw-normal"><%= property.blob.dig('Name') %></div>
           <p>
-            <%= property.inspect %>
+            <%= property.blob.dig('PropertyAddress', 'Address1') %> <%= property.blob.dig('PropertyAddress', 'Address2') %><br>
+            <%= property.blob.dig('PropertyAddress', 'City') %>
+            <%= property.blob.dig('PropertyAddress', 'State') %>
+            <%= property.blob.dig('PropertyAddress', 'Zip') %><br>
 	  </p>
         </div>
       </div>

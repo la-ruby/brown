@@ -31,7 +31,7 @@ class MySettingsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def my_settings_params
-    params.require(:my_settings).permit(:service_one_username, :service_one_password, :service_two_username,
-                                        :service_two_password)
+    params.require(:my_settings).permit(:zaibatsu_username, :zaibatsu_password, :dufrenite_username,
+                                        :dufrenite_password)
   end
 end

@@ -1,7 +1,7 @@
 
 <%= form_with(model: user.my_settings, method: :patch, id: dom_id(user.my_settings), class: ['row', 'g1']) do |form| %>
   <div class="col-md-11">
-    <%= BROWN_SERVICE_ONE %>
+    <%= BROWN_ZAIBATSU %>
   </div>
 
   <div class="col-md-1">
@@ -10,7 +10,7 @@
 
   <div class="col-md-3">
     <%= form.label "Username" %>
-    <%= form.text_field :service_one_username, class: ['form-control', 'zis-valid'] %>
+    <%= form.text_field :zaibatsu_username, class: ['form-control', 'zis-valid'] %>
     <!--
     <div class="valid-feedback">
       Looks good!
@@ -19,7 +19,7 @@
   </div>
   <div class="col-md-3">
     <%= form.label "Password" %>
-    <%= form.text_field :service_one_password, class: ['form-control', 'zis-valid'] %>
+    <%= form.text_field :zaibatsu_password, class: ['form-control', 'zis-valid'] %>
     <!--
     <div class="valid-feedback">
       Looks good!
@@ -38,7 +38,7 @@
 
 
   <div class="col-md-12 mt-4">
-    <%= BROWN_SERVICE_TWO %>
+    <%= BROWN_DUFRENITE %>
   </div>
 
 
@@ -48,7 +48,7 @@
 
   <div class="col-md-3">
     <%= form.label "Username" %>
-    <%= form.text_field :service_two_username, class: ['form-control', 'zis-valid'] %>
+    <%= form.text_field :dufrenite_username, class: ['form-control', 'zis-valid'] %>
     <!--
     <div class="valid-feedback">
       Looks good!
@@ -57,7 +57,7 @@
   </div>
   <div class="col-md-3">
     <%= form.label "Password" %>
-    <%= form.text_field :service_two_password, class: ['form-control', 'zis-valid'] %>
+    <%= form.text_field :dufrenite_password, class: ['form-control', 'zis-valid'] %>
     <!--
     <div class="valid-feedback">
       Looks good!

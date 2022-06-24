@@ -5,5 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Example.where(seed: true).destroy_all
-10.times { FactoryBot.create(:example, seed: true) }
+# Example.where(seed: true).destroy_all
+# 10.times { FactoryBot.create(:example, seed: true) }
+
+User.create(
+  {
+    "email"=> BROWN_FIRST_USER_EMAIL,
+    "password"=> BROWN_FIRST_USER_PASSWORD, 
+  }
+)
+

@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :projects, only: [:index]
   resources :my_settings, only: [:index, :update]
   resources :my_properties, only: [:index]
+  resources :zaibatsu_syncs, only: [:create]
 end

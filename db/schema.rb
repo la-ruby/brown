@@ -24,10 +24,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_152353) do
 
   create_table "my_settings", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "service_one_username"
-    t.string "service_one_password"
-    t.string "service_two_username"
-    t.string "service_two_password"
+    t.string "zaibatsu_username"
+    t.string "zaibatsu_password"
+    t.string "dufrenite_username"
+    t.string "dufrenite_password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_my_settings_on_user_id"
