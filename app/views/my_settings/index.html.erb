@@ -1,7 +1,10 @@
+<% resource = current_user.my_settings %>
+
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
   <div class="fs-6">
     My Settings
   </div>
 </div>
 
-<%= render '/misc/dummies/table' %>
+<%= render '/my_settings/index/core', user: current_user %>
+

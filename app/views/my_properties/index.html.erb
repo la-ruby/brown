@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+  <div class="fs-6">
+    My Properties (<%= current_user.properties.count %>)
+  </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% if current_user.properties.count == 0 %>
+    <div class="col">
+      <div class="card h-100 brown-bg-light-6 border-0">
+        <div class="card-body">
+          <div class="card-title fw-normal">⚠ No properties shown</div>
+          <% if current_user.my_settings? %>
+            <p>&nbsp;</p>
+          <% else %>
+            <p class="card-text fs-6 text-reset fw-normal">
+              Get started by supplying your <%= BROWN_SERVICE_ONE %> and
+              DocuSign credentials at <a href="/" class="text-decoration-none brown-dotted">My Settings</a>
+    	  </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% @properties.each do |property| %>
+    <div class="col">
+      <div class="card h-100 brown-bg-light-6 border-0">
+        <div class="card-body">
+          <div class="card-title fw-normal"><%= property.inspect[0..9] %></div>
+          <p>
+            <%= property.inspect %>
+	  </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+

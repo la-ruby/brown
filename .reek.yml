@@ -50,7 +50,7 @@ detectors:
     - ExperimentTest
 # https://github.com/troessner/reek#working-with-rails
 directories:
-  "app/controllers":
+  "app":
     IrresponsibleModule:
       enabled: false
     NestedIterators:
@@ -69,6 +69,8 @@ directories:
       enabled: false
   "app/models":
     InstanceVariableAssumption:
+      enabled: false
+    IrresponsibleModule:
       enabled: false
 exclude_paths:
   - ./**/example*

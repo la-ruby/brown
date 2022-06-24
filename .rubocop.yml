@@ -14,3 +14,7 @@ AllCops:
     - 'app/channels/application_cable/channel.rb'
     - 'app/channels/application_cable/connection.rb'
   NewCops: enable
+
+Style/Documentation:
+  Enabled: false
+

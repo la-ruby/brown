@@ -3,4 +3,18 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  # https://stackoverflow.com/a/3809360
+  has_one :my_settings
+  after_create :create_my_settings
+
+  has_many :properties
+
+  # has the  quad of credentials been supplied by user
+  def my_settings?
+    my_settings.service_one_username.present? &&
+      my_settings.service_one_password.present? &&
+      my_settings.service_two_username.present? &&
+      my_settings.service_two_password.present?
+  end
 end
