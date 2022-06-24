@@ -9,8 +9,10 @@ class SessionFlowTest < ActionDispatch::IntegrationTest
     get '/'
     follow_redirect!
     post user_session_path, params: {'user'=>{'email'=>BROWN_FIRST_USER_EMAIL, 'password'=>BROWN_FIRST_USER_PASSWORD}}
+    assert_response :redirect
     follow_redirect!
+    assert_response :redirect
     follow_redirect!
-    assert_equal 'testing', response.body
+    assert_response :ok
   end
 end
