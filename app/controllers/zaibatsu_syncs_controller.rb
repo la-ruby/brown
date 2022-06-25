@@ -8,7 +8,7 @@ class ZaibatsuSyncsController < ApplicationController
     browser.go_to BROWN_ZAIBATSU_URL_1
     wait_for { browser.at_css('input[name=UserName]') }
     # sleep2 5
-    browser.screenshot(path: "/tmp/1.png"); `open /tmp/1.png`
+    browser.screenshot(path: "/tmp/1.png"); # `open /tmp/1.png`
     elem = browser.at_css('input[name=UserName]')
     elem.focus
     elem.type(current_user.my_settings.zaibatsu_username)
@@ -17,11 +17,11 @@ class ZaibatsuSyncsController < ApplicationController
     elem.type(current_user.my_settings.zaibatsu_password, :enter)
     sleep2 3
     wait_for { browser.at_css('button#continue-button') }
-    browser.screenshot(path: "/tmp/2.png"); `open /tmp/2.png`
+    browser.screenshot(path: "/tmp/2.png"); # `open /tmp/2.png`
     sleep2 5
     browser.at_css("button#continue-button").click
     sleep2 7
-    browser.pages.last.screenshot(path: "/tmp/3.png"); `open /tmp/3.png`
+    browser.pages.last.screenshot(path: "/tmp/3.png"); # `open /tmp/3.png`
     browser.pages.last.execute '$("a#mnuTransactions:visible").click()'
     # browser.pages.last.css('a#mnuTransactions').first.click rescue (puts "rescued")
     # sleep2 3
@@ -29,7 +29,7 @@ class ZaibatsuSyncsController < ApplicationController
     sleep2 1
     #browser.pages.last.at_css('.open-menu-toggle.active a#mnuTransactions').click
     #sleep2 5
-    # browser.pages.last.screenshot(path: "/tmp/4.png"); `open /tmp/4.png`
+    # browser.pages.last.screenshot(path: "/tmp/4.png"); # `open /tmp/4.png`
     ajax = browser.pages.last.network.traffic.select { |item|
       item.request.url =~ /GetTransactionList/
     }.first
