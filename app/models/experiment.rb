@@ -11,3 +11,4 @@ class Experiment
   end
 end
 # rubocop:enable all
+
