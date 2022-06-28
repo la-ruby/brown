@@ -8,8 +8,6 @@
       <%= button_to("/zaibatsu_syncs", class: 'btn brown-no-hover', data: { turbo: false }, form: {class: 'ms-3 d-inline-block'}) do %>
         <span class="brown-dotted"><i class="bi bi-arrow-repeat"></i> refresh</span>
       <% end %>
-
-
     </div>
   </div>
   <% end %>
@@ -52,9 +50,17 @@
             <%= property.blob.dig('PropertyAddress', 'State') %>
             <%= property.blob.dig('PropertyAddress', 'Zip') %><br>
 	  </p>
+          <div class="row">
+	    <div class="col">&nbsp;</div>
+	    <div class="col-6">
+              <%= render '/dropdown', id: "property-#{property.id}-contextMenu", label: '<i class="bi bi-caret-down"></i>'.html_safe %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   <% end %>
 </div>
 
+
+              

@@ -1,0 +1,32 @@
+
+<span id="<%= id %>" class="btn btn-neutral"><%= label %></span>
+<script>
+$(function(){
+    /**************************************************
+     * Context-Menu with Sub-Menu
+     **************************************************/
+    $.contextMenu({
+        selector: '#<%= id %>',
+        trigger: 'left',
+        callback: function(key, options) {
+            var m = "clicked: " + key;
+            console.log(m);
+        },
+        items: {
+          "forms": {
+            "name": "Forms",
+            "items": {
+              "aaa": {
+                "name": "Residential Listing Agreement",
+                "items": {
+                  "bbb": {
+                    "name": "Download Empty Form"
+                  }
+                }
+              }
+            }
+          }
+        }
+    });
+});
+</script>
