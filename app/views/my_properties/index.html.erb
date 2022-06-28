@@ -5,7 +5,7 @@
   <% if current_user.properties.present? %>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group me-2">
-      <%= button_to("/zaibatsu_syncs", class: 'btn btn-sm brown-no-hover', data: { turbo: false }, form: {class: 'ms-3 d-inline-block'}) do %>
+      <%= button_to("/zaibatsu_syncs", class: 'btn brown-no-hover', data: { turbo: false }, form: {class: 'ms-3 d-inline-block'}) do %>
         <span class="brown-dotted"><i class="bi bi-arrow-repeat"></i> refresh</span>
       <% end %>
 
